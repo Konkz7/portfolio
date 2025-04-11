@@ -140,28 +140,25 @@ html, body {
 .about-section{
   position: relative;
   display: flex;
-  margin: 10px;
+  margin: 1%;
  
   flex-direction: row;
   height: 80vh;
 
- 
- 
 }
 
 #profile-picture{
   width: 470px;
   height: 442px;
-  scale: 1.0;
-  margin-left: 100px;
+  margin-left: 6%;
   background-image: url('/public/images/revisedCutout.png');
   animation: dance 1s infinite alternate
   
 }
 
 .about-textbox{
-  margin-left: 50px;
-  margin-top: -30px;
+  margin-left: 3%;
+  margin-top: -2%;
   max-width: 55%;
 }
 
@@ -181,7 +178,7 @@ html, body {
 
 @keyframes dropDown {
   from {
-    transform: translateY(-10px);
+    transform: translateY(-0.5rem);
     opacity: 0;
   }
   to {
