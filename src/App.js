@@ -1,14 +1,27 @@
 import React , {useState,useEffect} from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaAngleRight,FaAngleLeft } from "react-icons/fa";
+import { projects } from "./Constants";
 
 import './App.css';
 
+
+
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [projectIndex, setProjectIndex] = useState(0);
+
+  const noProjects = projects.length;
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  
+
+  const adjustScreen = (value) => {
+    setProjectIndex(prevIndex => {
+      const newIndex = (prevIndex + value + noProjects) % noProjects;
+      console.log(newIndex);
+      return newIndex;
+    });
+  }
 
   return (
   <div>
@@ -41,9 +54,7 @@ const App = () => {
           <div id="profile-picture"/>
           <div className="about-textbox">
             <div id = "about-header">
-              <h1 id="about-title">
-                About Me
-              </h1>
+              <h1 className="heading">About Me</h1>
 
               <div className="social-button-row">
                 <a href="https://github.com/Konkz7" target="_blank" rel="noopener noreferrer" className="social-button">
@@ -59,19 +70,65 @@ const App = () => {
     
 
             </div>
-            <h2 id="about-text">
+            <p id="about-text">
               I am a passioinate junior software developer who knows theres no task too small or too big. I am a fast learner and I am always looking for new challenges to tackle. 
               I am a team player and I love to work with others to hit goals. I am always looking for new opportunities to learn and grow as a person. 
               I also love an environment where creative solutions are encouraged. 
               With that ... welcome to my portfolio!
-            </h2>
+            </p>
           </div>
         </div>
       </div>
       
     </div>
 
-    
+    <div className="projects-section">
+      <div className="projects-container">
+
+        <h2 className="heading" id="projects-header" >My Projects</h2>
+
+        <h3 className="small-heading" id="project-title" >{projects[projectIndex].title}</h3>
+
+        <div className="screen-content">
+
+          <div className="project-nav-arrow" onPointerDown={() => adjustScreen(-1)}>
+            <FaAngleLeft size={84} color="white"></FaAngleLeft>
+          </div>
+
+          <div id = "project-card">
+
+            {projects[projectIndex].hasVideo ?
+              <video
+                key={projects[projectIndex].src} // <- forces re-render
+                width="95%"
+                height="95%"
+                controls
+              >
+              <source src={process.env.PUBLIC_URL + projects[projectIndex].src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              :
+              <img 
+                key={projects[projectIndex].src} // <- forces re-render
+                src = {projects[projectIndex].src} 
+                width="90%" 
+                height="100%"
+              />     
+            }
+            
+          </div>
+
+          <div className="project-nav-arrow" onPointerDown={() => adjustScreen(1)}>
+            <FaAngleRight size={84} color="white"></FaAngleRight>
+          </div>
+
+
+        </div>
+
+        
+
+      </div>
+    </div>  
   </div>
   );
 };

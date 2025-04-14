@@ -8,6 +8,15 @@ html, body {
   overflow-x: hidden;
 }
 
+.heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: white;
+}
+
+.small-heading {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  color: white;
+}
 .navbar {
   position: fixed;
   top: 0;
@@ -132,18 +141,13 @@ html, body {
   margin-top: 1%;
 }
 
-#about-title {
-  font-size: clamp(2rem, 5vw, 4rem);
-  color: white;
-}
-
 #about-text {
   font-size: clamp(1rem, 3vw, 2rem);
   color: white;
   flex-wrap: wrap;
-
-
 }
+
+
 
 .social-button-row{
   display: flex;
@@ -174,6 +178,74 @@ html, body {
 .social-button:hover {
   background-color: #333;
   color: #00bfff;
+}
+
+
+.projects-section{
+  display: flex;
+  flex-wrap: wrap;
+  height: 250vh;
+  background-color: #111;
+  border-top: #222 0.5rem solid;
+
+}
+
+#projects-header{
+  margin-left: 3rem ;
+}
+
+.projects-container{
+  flex-wrap: wrap;
+  display: flex;
+ 
+  width: 100%;
+  flex-direction:  column;
+}
+
+.screen-content{
+  display: flex;
+  flex-direction: row;
+  height: 25%;
+  justify-content: space-between;
+  background-color: rgb(21, 56, 33);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+}
+
+.project-nav-arrow{
+
+    display: flex;
+    height: 100%;
+    width: 10%;
+    opacity: 0.5;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-nav-arrow:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  
+}
+
+#project-title{
+  text-align: center;
+}
+
+
+#project-card{
+  display: flex;
+  height: 100%;
+  width: 50%;
+  background-color: #1a1a1a;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 @media (min-width: 1153px) {
@@ -250,6 +322,17 @@ html, body {
   to {
     transform: rotate(10deg);
     
+  }
+}
+
+@keyframes swell-appear {
+  from {
+    transform: scale(1);
+    opacity: 0.5;  
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 1;    
   }
 }
 
