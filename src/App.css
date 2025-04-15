@@ -17,6 +17,11 @@ html, body {
   text-align: center;
 }
 
+.heading.black{
+  color:#111;
+}
+
+
 .small-heading {
   font-size: clamp(1rem, 2.5vw, 2rem);
   color: white;
@@ -86,6 +91,7 @@ html, body {
   background-position: center 70%;
   padding: 5%;
   z-index: 500;
+
 }
 .overlay {
   position: absolute;
@@ -96,6 +102,8 @@ html, body {
   
   
   animation: dropDownAnim 3s ease-in-out;
+
+
 }
 
 .hero-title {
@@ -297,21 +305,38 @@ html, body {
   color: white;
   font-size: clamp(0.5rem, 3vw, 1.5rem);
   margin-right: 3rem;
+  
 }
 
 .project-info-container{
   display: flex;
   flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
   flex-wrap: wrap;
-  
 }
 
-.project-info-section{
+
+.project-tech-section{  
+
+  width: 40vw;
   
-  height:100%;
-  width:50%;
+}.project-summary-section{  
+
+  width: 55vw;
   
 }
+perience-section{
+  display: flex;
+  background-color: antiquewhite;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 .slideLeft{
   animation: slideLeftAnim 1.5s ease;
@@ -380,6 +405,16 @@ html, body {
 
 .tech-icon{
   width: 80px;
+}
+
+.project-tech-section{  
+
+  width: 90%;
+  
+}.project-summary-section{  
+
+  width: 90%;
+  
 }
 
 }

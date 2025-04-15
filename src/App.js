@@ -4,7 +4,8 @@ import {
   FaAngleRight,FaAngleLeft 
 } from "react-icons/fa";
 import { projects} from "./Constants";
-import TechIcon from "./Constants";
+import TechIcon from "./Components/TechIcon";
+import { VerticalTimeline, TimelineItem } from './Components/Timeline';
 
 
 import './App.css';
@@ -159,7 +160,7 @@ const App = () => {
 
         <div className="project-info-container">
 
-          <div className="project-info-section">
+          <div className="project-tech-section">
             <h3 className="small-heading" id="project-title">Technologies: </h3>
 
             <div id = "icon-container">
@@ -173,7 +174,7 @@ const App = () => {
           </div>
 
         
-          <div className="project-info-section" >
+          <div className="project-summary-section" >
             <h2 className="small-heading" >Summary:</h2>
             <p className = {`project-summary-text  ${slide != null ? "dropDown" : "" }`}> 
             {projects[projectIndex].description} </p>
@@ -183,7 +184,40 @@ const App = () => {
         
 
       </div>
-    </div>  
+    </div> 
+
+    <div className="experience-section">
+      <h2 className="heading black" >Work Experience</h2>
+      <VerticalTimeline>
+        <TimelineItem
+          header="Software Developer Intern"
+          logo={"logo192.png"}
+          workplaceName="Tech Company Inc."
+          description="Worked on developing scalable web solutions while collaborating closely with the design and development teams."
+        >
+          <ul>
+            <li>Implemented new features using React and Node.js.</li>
+            <li>Optimized existing functionalities, reducing load times by 20%.</li>
+            <li>Participated in agile development practices.</li>
+          </ul>
+        </TimelineItem>
+
+        <TimelineItem
+          header="Junior Software Engineer"
+          logo={"logo192.png"}
+          workplaceName="Another Tech Inc."
+          description="Focused on enhancing user experience through innovative UI solutions and improved performance benchmarks."
+        >
+          <ul>
+            <li>Developed responsive web components.</li>
+            <li>Improved code coverage through unit testing.</li>
+            <li>Collaborated in cross-functional teams.</li>
+          </ul>
+        </TimelineItem>
+      </VerticalTimeline>
+    </div>
+    
+     
   </div>
   );
 };
