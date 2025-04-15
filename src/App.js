@@ -6,6 +6,7 @@ import {
 import { projects} from "./Constants";
 import TechIcon from "./Components/TechIcon";
 import { VerticalTimeline, TimelineItem } from './Components/Timeline';
+import { motion } from 'framer-motion';
 
 
 import './App.css';
@@ -94,7 +95,7 @@ const App = () => {
           </div>
           <p id="about-text">
           {">>"}Passionate junior developer with a solid foundation in creating and maintaining
-          software applications (especially mobile). Experienced in coding with multiple
+          software applications (especially in mobile). Experienced in coding with multiple
           programming languages, collaborating with teams, and debugging problems to ensure smooth
           functionality. Despite having a preference to Java, I'm enthusiastic about learning new technologies and making a difference to the world of technology.
           </p>
@@ -103,8 +104,16 @@ const App = () => {
 
     </div>
 
+
     <div className="projects-section">
-      <div className="projects-container">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 3 }}
+        viewport={{ once: true }}
+        className="projects-container"
+      >
+    
 
         <div className="projects-header">
           <h2 className="heading" id = "projects"> My Projects</h2>
@@ -135,6 +144,8 @@ const App = () => {
                 width="95%"
                 height="95%"
                 controls
+                muted={true}
+                autoPlay={true}
               >
               <source src={process.env.PUBLIC_URL + projects[projectIndex].src} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -181,17 +192,23 @@ const App = () => {
           </div>
 
         </div>
-        
 
-      </div>
+      </motion.div>
     </div> 
 
     <div className="experience-section">
+    <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 3 }}
+        viewport={{ once: true }}
+        className=""
+      >
       <h2 className="heading black center" id = "experience">Experience</h2>
       <VerticalTimeline>
         <TimelineItem
           header="Software Developer Intern"
-          logo={"logo192.png"}
+          logo={process.env.PUBLIC_URL + "/images/kpmg-icon.png"}
           workplaceName="KPMG"
           description="Worked on developing scalable web solutions while collaborating closely with the design and development teams."
         >
@@ -205,7 +222,7 @@ const App = () => {
 
         <TimelineItem
           header="Student Developer"
-          logo={"logo192.png"}
+          logo={process.env.PUBLIC_URL + "/images/ibm-icon.png"}
           workplaceName="IBM"
           description= {`A group university project in which we developed a quiz-based city-building game for IBM so
           learners could be more engaged.`}>
@@ -217,6 +234,7 @@ const App = () => {
           </ul>
         </TimelineItem>
       </VerticalTimeline>
+      </motion.div>
     </div>
 
   <footer className="footer" id="contact">
