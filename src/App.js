@@ -53,10 +53,10 @@ const App = () => {
         {isOpen ? '✕' : '☰'}
       </button>
       <ul className={`navbar-links ${isOpen ? 'show' : ''}`}>
-        <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
@@ -76,7 +76,7 @@ const App = () => {
         <div id="profile-picture"/>
         <div className="about-textbox">
           <div id = "about-header">
-            <h1 className="heading center">About Me</h1>
+            <h1 className="heading center" id = "about">About Me</h1>
 
             <div className="social-button-row">
               <a href="https://github.com/Konkz7" target="_blank" rel="noopener noreferrer" className="social-button">
@@ -93,10 +93,10 @@ const App = () => {
 
           </div>
           <p id="about-text">
-            I am a passioinate junior software developer who knows theres no task too small or too big. I am a fast learner and I am always looking for new challenges to tackle. 
-            I am a team player and I love to work with others to hit goals. I am always looking for new opportunities to learn and grow as a person. 
-            I also love an environment where creative solutions are encouraged. 
-            With that ... welcome to my portfolio!
+          {">>"}Passionate junior developer with a solid foundation in creating and maintaining
+          software applications (especially mobile). Experienced in coding with multiple
+          programming languages, collaborating with teams, and debugging problems to ensure smooth
+          functionality. Despite having a preference to Java, I'm enthusiastic about learning new technologies and making a difference to the world of technology.
           </p>
         </div>
       </div>  
@@ -107,7 +107,7 @@ const App = () => {
       <div className="projects-container">
 
         <div className="projects-header">
-          <h2 className="heading"> My Projects</h2>
+          <h2 className="heading" id = "projects"> My Projects</h2>
           <h2 className="heading"> 
             <span className={`heading ${slide != null ? "dropDown" : "" }`}>{projectIndex+1}</span> 
             {`/${noProjects}`}
@@ -187,35 +187,52 @@ const App = () => {
     </div> 
 
     <div className="experience-section">
-      <h2 className="heading black" >Work Experience</h2>
+      <h2 className="heading black center" id = "experience">Experience</h2>
       <VerticalTimeline>
         <TimelineItem
           header="Software Developer Intern"
           logo={"logo192.png"}
-          workplaceName="Tech Company Inc."
+          workplaceName="KPMG"
           description="Worked on developing scalable web solutions while collaborating closely with the design and development teams."
         >
           <ul>
-            <li>Implemented new features using React and Node.js.</li>
-            <li>Optimized existing functionalities, reducing load times by 20%.</li>
-            <li>Participated in agile development practices.</li>
+            <li>End to end tested multiple codebases and contributed to them</li>
+            <li>Added VOIP functionality to whistleblower application</li>
+            <li>Made several pieces of detailed documentation i.e release notes and product documents</li>
+            <li>Also solely restored and updated outdated legacy systems.</li>
           </ul>
         </TimelineItem>
 
         <TimelineItem
-          header="Junior Software Engineer"
+          header="Student Developer"
           logo={"logo192.png"}
-          workplaceName="Another Tech Inc."
-          description="Focused on enhancing user experience through innovative UI solutions and improved performance benchmarks."
-        >
+          workplaceName="IBM"
+          description= {`A group university project in which we developed a quiz-based city-building game for IBM so
+          learners could be more engaged.`}>
           <ul>
-            <li>Developed responsive web components.</li>
-            <li>Improved code coverage through unit testing.</li>
+            <li>Worked closely with IBM staff in order to make sure we adhered to their requirements</li>
+            <li>Had lots of experience with their powerful AI known as IBM Watson.</li>
             <li>Collaborated in cross-functional teams.</li>
+            <li>Improved code coverage through unit testing.</li>
           </ul>
         </TimelineItem>
       </VerticalTimeline>
     </div>
+
+  <footer className="footer" id="contact">
+    <div className="footer-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+    </div>
+    <h3 className="footer-heading">Contact me:</h3>
+    <div className="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:your.email@example.com">amara03@live.co.uk</a></p>
+      <p><strong>Phone:</strong> +44 7412092464</p>
+    </div>
+  </footer>
+
+   
     
      
   </div>
