@@ -83,7 +83,7 @@ const App = () => {
               <a href="https://github.com/Konkz7" target="_blank" rel="noopener noreferrer" className="social-button">
                 <FaGithub size = {48} />
               </a>
-              <a href="/MAIN_CV.pdf" target="_blank" className="social-button text">
+              <a href= {process.env.PUBLIC_URL +"/MAIN_CV.pdf"} target="_blank" className="social-button text">
                 CV
               </a>
               <a href="https://www.linkedin.com/in/amara-okonkwo-19249435b/" target="_blank" rel="noopener noreferrer" className="social-button">
