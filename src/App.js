@@ -80,7 +80,7 @@ const App = () => {
 
             <div className="social-button-row">
               <a href="https://github.com/Konkz7" target="_blank" rel="noopener noreferrer" className="social-button">
-                <FaGithub size={48} />
+                <FaGithub size = {48} />
               </a>
               <a href="/MAIN_CV.pdf" target="_blank" className="social-button text">
                 CV
@@ -175,7 +175,7 @@ const App = () => {
 
         
           <div className="project-summary-section" >
-            <h2 className="small-heading" >Summary:</h2>
+            <h2 className="small-heading" id = "summary" >Summary:</h2>
             <p className = {`project-summary-text  ${slide != null ? "dropDown" : "" }`}> 
             {projects[projectIndex].description} </p>
           </div>

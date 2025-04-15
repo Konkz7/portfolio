@@ -81,7 +81,7 @@ html, body {
 .hero-section {
   position: relative;
   width: 100%;
-  min-height: 150vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-image: url('/public/images/mountainTop.jpeg');
@@ -123,7 +123,7 @@ html, body {
 
 .hero-content{
   margin-top: 15vh;
-  padding: 8vh , 2vw;
+  padding: 5vh , 2vw;
   animation: dropDownAnim 3s ease-in-out;
 
 }
@@ -134,8 +134,10 @@ html, body {
   position: relative;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   z-index: 500;
   animation: dropDownAnim 3s ease-in-out;
+  justify-content: center;
 }
 
 #about-header{
@@ -154,40 +156,45 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
   animation: dance 1s infinite alternate;
+  
 }
 
 .about-textbox {
-  flex: 1 1 300px;
-  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  width: 55vw;
   margin-top: 1%;
+
 }
 
 #about-text {
   font-size: clamp(1rem, 3vw, 2rem);
   color: white;
   flex-wrap: wrap;
+  
 }
 
 
 
 .social-button-row{
   display: flex;
-  gap: 5rem;
+  gap: 1rem;
   justify-content: center;
   margin-top: 1rem;
-  margin-left: 8% ;
+  margin-left: 2% ;
   flex-wrap: wrap;
 }
 
+
+
 .social-button {
   flex: 1 1 2px;
-  background-color: #1a1a1a;
+  background-color: black;
   color: white;
+  max-width: 10vw;
+  max-height: 10vh;
   padding: 0.75rem 1.25rem;
   border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,6 +205,9 @@ html, body {
 
 .social-button.text {
   padding: 1.25rem 1.25rem; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .social-button:hover {
@@ -315,6 +325,7 @@ html, body {
   justify-content: center;
   margin-top: 1rem;
   flex-wrap: wrap;
+  padding-bottom: 1%;
 }
 
 
@@ -357,7 +368,6 @@ perience-section{
 }
 
 
-
 /* Responsive styles */
 @media (max-width: 768px) {
   /* Default navbar links style */
@@ -393,16 +403,18 @@ perience-section{
   display: block; /* Show the hamburger button */
 }
 
-.social-button-row {
-  gap: 1rem;
-  margin-left: 2%;
-}
+
 
 .social-button {
-  font-size: 1.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  min-width: 60px; 
 }
 
+.social-button.text {
+  padding: 0.75rem 0.75rem;
+  font-size: 1.25rem;
+}
 .tech-icon{
   width: 80px;
 }
@@ -413,9 +425,9 @@ perience-section{
   
 }.project-summary-section{  
 
-  width: 90%;
-  
+  width: 90%; 
 }
+
 
 }
 
