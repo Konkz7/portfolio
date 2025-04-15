@@ -146,9 +146,9 @@ const App = () => {
                 controls
                 muted={true}
                 autoPlay={true}
+                src={process.env.PUBLIC_URL + projects[projectIndex].src} 
+                type="video/mp4"
               >
-              <source src={process.env.PUBLIC_URL + projects[projectIndex].src} type="video/mp4" />
-                Your browser does not support the video tag.
               </video>
               :
               <img 
