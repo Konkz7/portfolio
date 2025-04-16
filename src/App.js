@@ -146,7 +146,7 @@ const App = () => {
                 controls
                 muted={true}
                 autoPlay={true}
-                src={projects[projectIndex].src} 
+                src={process.env.PUBLIC_URL + projects[projectIndex].src} 
                 type="video/mp4"
               >
               </video>
