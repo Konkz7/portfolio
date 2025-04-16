@@ -10,7 +10,7 @@ export const projects = [
           parallelize computation. `,
       "technologies": ["Java"],
       "hasVideo": true,
-      "src": "/videos/CW2_DIA_VID.mp4",
+      "src": "/CW2_DIA_VID.mp4",
       "projectLink": "https://github.com/Konkz7/Chess-Engine",
     },
 
@@ -23,7 +23,7 @@ export const projects = [
         animations/graphics while controlling the behaviour of every asset with C# scripts.`,
       "technologies": ["C#","Unity"],
       "hasVideo": true,
-      "src": "/videos/game-trailer.mp4",
+      "src": "/game-trailer.mp4",
       "projectLink": "https://github.com/Konkz7/Unity-Possessed-Platformer",
     },
 
@@ -76,7 +76,7 @@ export const projects = [
         parser which was very insightful.`,
       "technologies": ["C++","OpenGL"],
       "hasVideo": true,
-      "src": "/videos/openGL-trailer.mp4",
+      "src": "/openGL-trailer.mp4",
       "projectLink": "https://github.com/Konkz7/OpenGL-IslandScene",
     },
 
