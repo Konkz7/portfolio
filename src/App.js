@@ -154,8 +154,11 @@ const App = () => {
               <img 
                 key={projectIndex} // <- forces re-render
                 src = {process.env.PUBLIC_URL + projects[projectIndex].src} 
-                width="90%" 
-                height="100%"
+                style ={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                }}
               />     
             }
             

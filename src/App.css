@@ -191,7 +191,7 @@ html, body {
 
 .social-button {
   flex: 1 1 2px;
-  background-color: black;
+  
   color: white;
   max-width: 10vw;
   max-height: 10vh;
