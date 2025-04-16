@@ -90,7 +90,7 @@ html, body {
   background-position: center;
   background-attachment: fixed;
   background-position: center 70%;
-  padding: 5%;
+  padding: 2vw;
   z-index: 500;
 
 }
@@ -250,7 +250,7 @@ html, body {
 .screen-content{
   display: flex;
   flex-direction: row;
-  height: 40%;
+  max-height: 40%;
   width: 90%;
   justify-content: space-between;
   background-color: rgb(21, 56, 33);
