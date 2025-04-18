@@ -455,6 +455,9 @@ html, body {
   display: block; /* Show the hamburger button */
 }
 
+.hero-section{
+  padding: 3.5% 5%;
+}
 
 
 .social-button {

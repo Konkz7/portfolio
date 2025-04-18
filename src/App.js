@@ -94,7 +94,7 @@ const App = () => {
 
           </div>
           <p id="about-text">
-          {">>"}Passionate junior developer with a solid foundation in creating and maintaining
+          Passionate junior developer with a solid foundation in creating and maintaining
           software applications (especially in mobile). Experienced in coding with multiple
           programming languages, collaborating with teams, and debugging problems to ensure smooth
           functionality. Despite having a preference to Java, I'm enthusiastic about learning new skills and making an impact in the world of tech.
