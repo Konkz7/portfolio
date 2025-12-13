@@ -106,4 +106,54 @@ export const projects = [
 
 ];
 
+export const certifications = [
+  {
+    "title" : "Google Cybersecurity Professional Certificate",
+    "src": "/images/google-cyber-image.jpg",
+    "description" : `Understand the importance of cybersecurity practices and their impact for organizations.
+    Identify common risks, threats, and vulnerabilities, as well as techniques to mitigate them.
+    Protect networks, devices, people, and data from unauthorized access and cyberattacks using Security Information and Event Management (SIEM) tools.
+    Gain hands-on experience with Python, Linux, and SQL.`,
+  },
+  {
+    "title" : "Qualys Vulnerability Management",
+    "src": "/images/qualys-edit.jpg",
+    "description" : `Completed training in identifying, assessing, and managing security vulnerabilities across systems. 
+     Demonstrated understanding of vulnerability scanning, analysis, remediation workflows, and risk-based prioritization. Understood how to use the Qualys TruRisk platform for security and compliance. Covered asset visibility, vulnerability detection, risk scoring, and using Qualys tools to reduce exposure across an organisation. 
+     Configured and deployed Qualys sensors (virtual, cloud, network, or endpoint). Demonstrated foundational knowledge of how sensors collect security data and integrate into the broader Qualys ecosystem.
+    `,
+  }
+
+]
+
+export const cyberSecurityProjects = [
+  {
+    title: "EDR Attack & Detection Lab",
+    description: "Simulated endpoint compromise using Sliver C2 and detected malicious activity with LimaCharlie through process and network telemetry.",
+    image: "/images/edr.png",
+    github: "https://github.com/Konkz7/CyberSecurityLabs/blob/main/SoyouwanttobeaSOCanalyst.pdf"
+  },
+  {
+    title: "Wireshark Network Forensics",
+    description: "End-to-end packet capture and traffic analysis investigating TCP, DNS, and TLS behaviour.",
+    image: "/images/wireshark.png",
+    github: "https://github.com/Konkz7/CyberSecurityLabs/blob/main/wiresharkDemoLab.pdf"
+  },
+  {
+    title: "Metasploit Penetration Testing",
+    description: `Conducted a full exploitation cycle using the Metasploit Framework, including target enumeration, module
+selection, payload configuration, exploit execution, and post-exploitation operations to demonstrate real-world
+penetration testing methodology.`,
+    image: "/images/metasploit.png",
+    github: "https://github.com/Konkz7/CyberSecurityLabs/blob/main/metasploitDemoLab.pdf"
+  },
+  {
+    title: "Hack The Box – Introductory Penetration Testing",
+    description: `Completed the full Hack The Box *Starting Point* penetration-testing track, working through a range of
+beginner-to-intermediate machines.`,
+    image: "/images/htb.png",
+    github: "https://github.com/Konkz7/CyberSecurityLabs/tree/main/htbPenTesting"
+  }
+];
+
 

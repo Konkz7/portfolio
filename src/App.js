@@ -3,7 +3,7 @@ import {
   FaGithub, FaLinkedin, 
   FaAngleRight,FaAngleLeft 
 } from "react-icons/fa";
-import { projects} from "./Constants";
+import { projects ,certifications, cyberSecurityProjects} from "./Constants";
 import TechIcon from "./Components/TechIcon";
 import { VerticalTimeline, TimelineItem } from './Components/Timeline';
 import { motion } from 'framer-motion';
@@ -56,6 +56,8 @@ const App = () => {
       <ul className={`navbar-links ${isOpen ? 'show' : ''}`}>
         <li><a href="#">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#cyber-security">Cybersecurity</a></li>
+        <li><a href="#certification">Certification</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -94,10 +96,12 @@ const App = () => {
 
           </div>
           <p id="about-text">
-          Passionate junior developer with a solid foundation in creating and maintaining
-          software applications (especially in mobile). Experienced in coding with multiple
-          programming languages, collaborating with teams, and debugging problems to ensure smooth
-          functionality. Despite having a preference to Java, I'm enthusiastic about learning new skills and making an impact in the world of tech.
+          Passionate junior developer with a strong foundation in building and maintaining software applications
+          , particularly in mobile development. Alongside development, I have hands-on experience in cybersecurity,
+           including endpoint monitoring, network traffic analysis, and threat investigation. 
+           Comfortable working across multiple programming languages, collaborating in team environments, and 
+           debugging complex issues, I enjoy bridging development and security to build reliable, secure systems.
+
           </p>
         </div>
       </div>  
@@ -199,6 +203,78 @@ const App = () => {
       </motion.div>
     </div> 
 
+    <div className="projects-section">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2 }}
+        viewport={{ once: true }}
+        className="projects-container"
+      >
+        <div className="projects-header">
+          <h2 className="heading" id="cyber-security">Cyber Security</h2>
+          <a href= {process.env.PUBLIC_URL +"/SOC_CV.pdf"} target="_blank" className="social-button text">
+                CV
+          </a>
+        </div>
+
+        <div className="cyber-grid">
+          {cyberSecurityProjects.map((project, index) => (
+            <a
+              key={index}
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cyber-card"
+            >
+              <img
+                src={process.env.PUBLIC_URL + project.image}
+                alt={project.title}
+                className="cyber-image"
+              />
+
+              <div className="cyber-content">
+                <h3 className="small-heading">{project.title}</h3>
+                <p className="cyber-description">{project.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+
+    <div className="projects-section">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 3 }}
+        viewport={{ once: true }}
+        className="projects-container"
+      >
+    
+
+      <div className="projects-header">
+        <h2 className="heading" id = "certification"> My Certifications</h2>     
+      </div>
+        
+      <div>
+        {certifications.map((cert, index) => (
+          <div key={index} className="certification-card">
+            <h2>{cert.title}</h2>
+            <div id="certification-content">
+              <img src={process.env.PUBLIC_URL +cert.src} 
+              alt={cert.title} 
+              className="certification-image" />
+              <p id = "certification-desc">{cert.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+        
+
+      </motion.div>
+    </div> 
+
     <div className="experience-section">
     <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -244,6 +320,8 @@ const App = () => {
     <div className="footer-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#cyber-security">Cybersecurity</a>
+      <a href="#certification">Certification</a>
       <a href="#experience">Experience</a>
     </div>
     <h3 className="footer-heading">Contact me:</h3>
