@@ -120,7 +120,7 @@ const App = () => {
     
 
         <div className="projects-header">
-          <h2 className="heading" id = "projects"> My Projects</h2>
+          <h2 className="heading" id = "projects">Projects</h2>
           <h2 className="heading"> 
             <span className={`heading ${slide != null ? "dropDown" : "" }`}>{projectIndex+1}</span> 
             {`/${noProjects}`}
@@ -254,7 +254,7 @@ const App = () => {
     
 
       <div className="projects-header">
-        <h2 className="heading" id = "certification"> My Certifications</h2>     
+        <h2 className="heading" id = "certification">Certifications</h2>     
       </div>
         
       <div>
