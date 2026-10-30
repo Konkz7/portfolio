@@ -82,7 +82,7 @@ export const projects = [
         sessions with invites so people can bring others into a workspace.`,
       "technologies": ["C#",".NET"],
       "hasVideo": false,
-      "src": "/images/flowState-trailer.png",
+      "src": "/images/flowstate-trailer.png",
       "projectLink": "https://github.com/Yosefgid/FlowState",
     },
 
