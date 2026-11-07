@@ -285,14 +285,21 @@ html, body {
 
 .project-card{
   display: flex;
-  
+
   width: 60%;
-  background-color: #1a1a1a;
-  border-radius: 2rem;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+}
+
+.project-media{
+  display: block;
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border: 6px solid #1a1a1a;
+  border-radius: 1rem;
+  background-color: #1a1a1a;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
 #icon-container{
@@ -316,8 +323,9 @@ html, body {
 .project-summary-text{
   color: white;
   font-size: clamp(0.5rem, 2.5vw, 1.5rem);
-  margin-right: 3rem;
-  
+  line-height: 1.5;
+  margin: 0 3rem 1rem 0;
+
 }
 
 .project-info-container{
@@ -341,33 +349,34 @@ html, body {
   
 }
 
-.certification-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f5f5f5;
-  border-radius: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin: 2rem 0;
+/* Section takes the certificates' own background so nothing clashes with the black sections */
+.certifications-section{
+  background-color: #ffffff;
 }
 
-#certification-content{
+.certification-card{
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 3rem;
 }
+
 .certification-image {
-  width: min(100%, 700px);
+  flex: 0 0 45%;
+  width: 45%;
   height: auto;
-  border-radius: 0.5rem;
 }
-#certification-desc{
-  margin-left: 2rem;
-  max-width: 80%;
-  font-size: clamp(0.5rem, 3vw, 1.5rem);
+
+.certification-text h2{
+  margin-top: 0;
+  color: #111;
+}
+
+.certification-desc{
+  color: #333;
+  line-height: 1.5;
+  font-size: clamp(0.9rem, 1.6vw, 1.25rem);
 }
 
 .experience-section{
@@ -541,13 +550,22 @@ html, body {
   width: 80px;
 }
 
-.project-tech-section{  
+.project-tech-section{
 
   width: 90%;
-  
-}.project-summary-section{  
 
-  width: 90%; 
+}.project-summary-section{
+
+  width: 90%;
+}
+
+.certification-card{
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.certification-image{
+  width: 100%;
 }
 
 

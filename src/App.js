@@ -3,7 +3,7 @@ import {
   FaGithub, FaLinkedin, 
   FaAngleRight,FaAngleLeft 
 } from "react-icons/fa";
-import { projects ,certifications, cyberSecurityProjects} from "./Constants";
+import { projects ,certifications, cyberSecurityProjects, experiences} from "./Constants";
 import TechIcon from "./Components/TechIcon";
 import { VerticalTimeline, TimelineItem } from './Components/Timeline';
 import { motion } from 'framer-motion';
@@ -145,8 +145,7 @@ const App = () => {
             {projects[projectIndex].hasVideo ?
               <video
                 key={projectIndex} // <- forces re-render
-                width="95%"
-                height="95%"
+                className="project-media"
                 controls
                 muted={true}
                 autoPlay={true}
@@ -157,13 +156,10 @@ const App = () => {
               :
               <img 
                 key={projectIndex} // <- forces re-render
-                src = {process.env.PUBLIC_URL + projects[projectIndex].src} 
-                style ={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain',
-                }}
-              />     
+                className="project-media"
+                src = {process.env.PUBLIC_URL + projects[projectIndex].src}
+                alt={projects[projectIndex].title}
+              />
             }
             
           </div>
@@ -183,7 +179,7 @@ const App = () => {
 
             <div id = "icon-container">
               {projects[projectIndex].technologies.map(tech =>(
-                <div className="tech-icon">
+                <div className="tech-icon" key={tech}>
                   <TechIcon name = {tech} color={"white"} />
                 </div>
               ))}
@@ -194,8 +190,11 @@ const App = () => {
         
           <div className="project-summary-section" >
             <h2 className="small-heading" id = "summary" >Summary:</h2>
-            <p className = {`project-summary-text  ${slide != null ? "dropDown" : "" }`}> 
-            {projects[projectIndex].description} </p>
+            {projects[projectIndex].description.split(/\n\s*\n/).map((paragraph, index) => (
+              <p key={`${projectIndex}-${index}`} className = {`project-summary-text  ${slide != null ? "dropDown" : "" }`}>
+                {paragraph.replace(/\s+/g, " ").trim()}
+              </p>
+            ))}
           </div>
 
         </div>
@@ -243,7 +242,7 @@ const App = () => {
       </motion.div>
     </div>
 
-    <div className="projects-section">
+    <div className="projects-section certifications-section">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -251,21 +250,21 @@ const App = () => {
         viewport={{ once: true }}
         className="projects-container"
       >
-    
+
 
       <div className="projects-header">
-        <h2 className="heading" id = "certification">Certifications</h2>     
+        <h2 className="heading black" id = "certification">Certifications</h2>
       </div>
-        
+
       <div>
         {certifications.map((cert, index) => (
-          <div key={index} className="certification-card">
-            <h2>{cert.title}</h2>
-            <div id="certification-content">
-              <img src={process.env.PUBLIC_URL +cert.src} 
-              alt={cert.title} 
-              className="certification-image" />
-              <p id = "certification-desc">{cert.description}</p>
+          <div key={index} className="certification-card" style={{ backgroundColor: cert.bgColor }}>
+            <img src={process.env.PUBLIC_URL +cert.src}
+            alt={cert.title}
+            className="certification-image" />
+            <div className="certification-text">
+              <h2>{cert.title}</h2>
+              <p className="certification-desc">{cert.description}</p>
             </div>
           </div>
         ))}
@@ -285,33 +284,22 @@ const App = () => {
       >
       <h2 className="heading black center" id = "experience">Experience</h2>
       <VerticalTimeline>
-        <TimelineItem
-          header="Software Developer Intern"
-          logo={process.env.PUBLIC_URL + "/images/kpmg-icon.png"}
-          workplaceName="KPMG"
-          description="Worked on developing scalable web solutions while collaborating closely with the design and development teams."
-        >
-          <ul>
-            <li>End to end tested multiple codebases and contributed to them</li>
-            <li>Added VOIP functionality to whistleblower application</li>
-            <li>Made several pieces of detailed documentation i.e release notes and product documents</li>
-            <li>Also solely restored and updated outdated legacy systems.</li>
-          </ul>
-        </TimelineItem>
-
-        <TimelineItem
-          header="Student Developer"
-          logo={process.env.PUBLIC_URL + "/images/ibm-icon.png"}
-          workplaceName="IBM"
-          description= {`A group university project in which we developed a quiz-based city-building game for IBM so
-          learners could be more engaged.`}>
-          <ul>
-            <li>Worked closely with IBM staff in order to make sure we adhered to their requirements</li>
-            <li>Had lots of experience with their powerful AI known as IBM Watson.</li>
-            <li>Collaborated in cross-functional teams.</li>
-            <li>Improved code coverage through unit testing.</li>
-          </ul>
-        </TimelineItem>
+        {experiences.map((job, index) => (
+          <TimelineItem
+            key={index}
+            header={job.role}
+            logo={job.logo && process.env.PUBLIC_URL + job.logo}
+            workplaceName={job.workplace}
+            dates={job.dates}
+            description={job.description}
+          >
+            <ul>
+              {job.points.map((point, pointIndex) => (
+                <li key={pointIndex}>{point}</li>
+              ))}
+            </ul>
+          </TimelineItem>
+        ))}
       </VerticalTimeline>
       </motion.div>
     </div>
